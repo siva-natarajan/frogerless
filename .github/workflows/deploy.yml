@@ -1,3 +1,5 @@
+name: Deploy serverless to staging
+
 on:
   push:
     branches:
