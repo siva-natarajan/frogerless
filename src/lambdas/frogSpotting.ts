@@ -21,6 +21,7 @@ export const addFrogSpottingLocation: Handler = async (
         frogType: { S: parsedReqBody.frogType },
         location: { S: parsedReqBody.location }
       },
+      ExclusiveStartKey: undefined
     }
 
     const command = new PutItemCommand(params)
@@ -54,7 +55,6 @@ export const getFrogSpottingLocations: Handler = async (
     const command = new ScanCommand(params)
     items = await client.send(command)
     items?.Items?.forEach(item => scanResults.push(unmarshall(item)))
-    params.ExclusiveStartKey = items.LastEvaluatedKey
   } while (typeof items.LastEvaluatedKey !== 'undefined')
 
   // console.log(unmarshall(scanResults))

@@ -1,5 +1,5 @@
+"use strict";
 // import { addFrogSpottingLocation } from "../../src/lambdas/frogSpotting"
-
 // const callback = jest.fn().mockImplementation((errorMsg) => {
 //   if (errorMsg) throw new Error(errorMsg);
 // });
@@ -18,11 +18,9 @@
 //   fail: () => 1,
 //   succeed: () => 1
 // }
-describe('adding frog spotting', () => {
-  it('some', () => {
-    expect(1).toBe(1)
-  })
-})
-
-
-describe('getting all frog spots', () => { it('other', () => expect(1).toBe(1)) })
+describe('adding frog spotting', function () {
+    it('some', function () {
+        expect(1).toBe(1);
+    });
+});
+describe('getting all frog spots', function () { it('other', function () { return expect(1).toBe(1); }); });
